@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<title>CROP ADVISOR</title>
+</head>
+<style type="text/css">
+  body {
+  padding-top: 65px;
+}
+ .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  .divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;   
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+</style>
+<body>
+  <nav class="navbar navbar-expand-md navbar-light  fixed-top" style="background-color:white">
+    <a class="navbar-brand" style="color: #0F9400; font-size: 25px"><!-- <img src="logo.png" style="height: 50px;width: 150px"> --><b><i>CROP Advisor</i></b></a>
+    <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+    <span class="navbar-toggler-icon" style="background-color:#0F9400 "></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="nav" >
+    <ul class="navbar-nav">
+      <li class="nav-item" >
+        <a class="nav-link   px-3" href="#" style="color: #77b122;"><b>HOME</b></a>
+      </li>
+      <li class="nav-item dropdown" data-toggle="dropdown">
+        <a class="nav-link  px-3 dropdown-toggle" href="#" style="color: #77b122;"><b>CATEGORIES</b></a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Fast Food</a>
+          <a class="dropdown-item" href="#">Lunch</a>
+          <a class="dropdown-item" href="#">Dessert</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link   px-3" href="#about" style="color:#77b122;"><b>ABOUT US</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link   px-3" href="#about" style="color:#77b122;"><b>CROPS</b></a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link  px-3" href="#" style="color:#77b122;"><b>CONTACT</b></a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link  px-3" href="#" style="color:#77b122;"><b>PREDICT</b></a>
+      </li>
+    </ul>
+    <form class="form-inline ml-3">
+      <div class="input-group">
+        <input type="text" class="form-control " placeholder="Search" >
+          <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </form>
+    </div>
+  </nav>
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+              <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+            <div class="carousel-inner">
+              <div class="carousel-item active" style="height: 230px">
+                <img src="m4.jpg" >
+                <div class="carousel-caption">
+                  <!-- <h3>Los Angeles</h3> -->
+                <!--   <p>Advising for Crop Cultivation using Machine Learning</p> -->
+                </div>   
+              </div>
+              <div class="carousel-item" style="height: 230px">
+                <img src="m2.jpg" >
+                <div class="carousel-caption" >
+                 
+                  
+                </div>   
+              </div>
+              <div class="carousel-item" style="height: 230px">
+                <img src="m1.jpg"  >
+                <div class="carousel-caption">
+    
+                </div>   
+              </div>
+            <div class="carousel-item" style="height: 230px">
+                <img src="m3.jpg" >
+              <div class="carousel-caption">
+              </div>   
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+   <br id="about">
+    <div class="container" >
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="about-us-content mb-100">
+            <div class="section-heading">
+              <!-- <p style="color: #77b122;" id="about"><b>About us</b></p> -->
+              <h3 ><span style="color:#77b122 "><b>About Us</b></span></h3>
+            </div>
+            <p style="text-align: justify;font-size: 18px;color: #137300;  font-family: 'Merriweather', serif;">In order to mitigate the agrarian crisis in the current status quo, there is a need for better recommendation systems to alleviate the crisis by helping the farmers to take an informed decision before starting the cultivation of crops. The <span><i><b>“Crop Advisor for Crop Cultivation using Machine Learning and Neural Network approach”</b></i></span> would be an application that will suggest suitable crops to be cultivated based on various factors such as rainfall, temperature, soil type etc.</p>
+<!--             <a href="#" class="btn famie-btn mt-30">Read More</a>
+ -->          </div>
+        </div>
+
+        <!-- Famie Video Play -->
+        <div class="col-lg-4">
+            <img src="pp.jpg" style="height: 100%;width: 100%">
+        </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 ><span style="color:#77b122 "><b>What We Do??</b></span></h3>
+          </div>
+
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row"> 
+          <div class="col-lg-4" style="text-align: center;align-content: center;font-family: 'Merriweather', serif;">
+            <h4 style="color: #137300;">PREDICTION</h4>
+            <img style="height: 50%;width: 50%"src="predict.png"alt="" >
+<br>
+              
+              <p style="color: #137300;font-size: 18px">On basis of region, we predict factors for better agrian practices</p>
+          </div>
+          <div class="col-lg-4"  style="text-align: center;align-content: center;font-family: 'Merriweather', serif;">
+            <h4 style="color: #137300;">RECOMMENDATION</h4>
+            <img style="height: 50%;width: 50%"src="reco.png" alt="">
+<br>
+              
+              <p style="color: #137300;font-size: 18px">Based on Prediction we suggest the best crops that should be planted</p>
+          </div>
+          <div class="col-lg-4"  style="text-align: center;align-content: center;font-family: 'Merriweather', serif;">
+            <h4 style="color: #137300;">INFORMATION</h4>
+            <img style=" height: 50%;width: 50%" src="ui.png" alt="">
+<br>
+               
+              <p style="color:#137300;font-size: 18px">Information on various crops that could be cultivated commercially</p>
+          </div>
+        </div>
+      </div>
+<div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 ><span style="color:#77b122 "><b>Predict Now</b></span></h3>
+          </div>
+
+        </div>
+      </div>
+
+  <div class="container">
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+           <form  action="{{ url_for('predict')}}"method="post">
+ 
+  <!-- form-group// -->
+    <div class="form-group input-group">
+        <input name="month" class="form-control" id="month" placeholder="Enter Month" type="text">
+    </div>
+    <div class="form-group input-group">
+        <input name="ph" class="form-control" id="ph" placeholder="Enter pH Scale" type="text">
+    </div>
+    <div class="form-group input-group">
+        <input name="region" class="form-control" id="region" placeholder="Enter Region" type="text">
+    </div>
+    <div class="form-group input-group">
+        <input name="soil" class="form-control" id="soil" placeholder="Enter Soil Type" type="text">
+    </div>
+     <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" > Predict Now  </button>
+    </div> <!-- form-group// -->
+    
+                                                                  
+</form>
+<br>
+<br>
+{{ prediction_text }}   
+
+          </div>
+
+        </div>
+      </div>    
+
+
+
+</body>
+</html>
