@@ -4,7 +4,7 @@ import pickle
 import pandas as pd 
  
 app = Flask(__name__)
-model = pickle.load(open('decision_tree.pkl', 'rb'))
+model = pickle.load(open('knn.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -76,7 +76,7 @@ def predict():
     prediction = model.predict([[region,month,ph,soil]])
     print (model.predict([[region,month,ph,soil]]))
     
-    output = (prediction[0])
+    output = get_key((prediction[0]))
 
     return render_template('index.html', prediction_text='Optimum crop should be {}'.format(output))
 
