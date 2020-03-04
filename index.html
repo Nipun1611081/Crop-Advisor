@@ -56,7 +56,12 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><div class="B">
   <!-- Modernizr JS -->
   <script src="js/modernizr-2.6.2.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -254,16 +259,26 @@
           <form action="{{ url_for('predict')}}"method="post">
   <div class="form-group input-group" >
     <div class="form-group input-group">
-        <input name="month" class="form-control" id="month" placeholder="Enter Month" type="text">
+        <!-- <input name="month" class="form-control" id="textbox" placeholder="Enter Month" type="text">
+        <button id="start-btn" class="btn"><i class="fa fa-microphone"></i></button> -->
+        <label for="validationDefault01"></label>
+      <input type="text" name="month" class="form-control" id="textbox" placeholder="Enter Month" required>
+      <button id="start-btn" class="btn"><i class="fa fa-microphone"></i></button>
     </div>
     <div class="form-group input-group">
-        <input name="ph" class="form-control" id="ph" placeholder="Enter pH Scale" type="text">
+        <label for="validationDefault02"></label>
+      <input type="text" name="ph" class="form-control" id="textbox2" placeholder="Enter pH Scale" required>
+      <button id="start-btn1" class="btn"><i class="fa fa-microphone"></i></button>
     </div>
     <div class="form-group input-group">
-        <input name="region" class="form-control" id="region" placeholder="Enter Region" type="text">
+        <label for="validationDefault03"></label>
+      <input type="text" name="region" class="form-control" id="textbox3" placeholder="Enter Region" required>
+      <button id="start-btn2" class="btn"><i class="fa fa-microphone"></i></button>
     </div>
     <div class="form-group input-group">
-        <input name="soil" class="form-control" id="soil" placeholder="Enter Soil Type" type="text">
+      <label for="validationDefault04"></label>
+      <input type="text" name="soil" class="form-control" id="textbox4" placeholder="Enter Soil Type" required>
+      <button id="start-btn3" class="btn"><i class="fa fa-microphone"></i></button>
     </div>
      <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block" > Predict Now  </button>
@@ -313,6 +328,179 @@
     function change(item_selected){
         document.getElementById('tab1').innerHTML = item_selected;
     }
+
+    var SpeechRecognition = window.webkitSpeechRecognition;
+  
+var recognition = new SpeechRecognition();
+var recognition1 = new SpeechRecognition();
+var recognition2 = new SpeechRecognition();
+var recognition3 = new SpeechRecognition();
+
+var Textbox = $('#textbox');
+var Textbox1 = $('#textbox2');
+var Textbox2 = $('#textbox3');
+var Textbox3 = $('#textbox4');
+var instructions = $('instructions');
+var instructions1 = $('instructions');
+var instructions2 = $('instructions');
+var instructions3 = $('instructions');
+
+var Content = '';
+var Content1 = '';
+var Content2 = '';
+var Content3 = '';
+
+//recognition.continuous = true;
+
+recognition.onresult = function(event) {
+
+  var current = event.resultIndex;
+
+  var transcript = event.results[current][0].transcript;
+ 
+    Content += transcript;
+    Textbox.val(Content);
+  
+};
+
+recognition1.onresult = function(event) {
+
+  var current = event.resultIndex;
+
+  var transcript = event.results[current][0].transcript;
+ 
+    Content1 += transcript;
+    Textbox1.val(Content1);
+  
+};
+
+recognition2.onresult = function(event) {
+
+  var current = event.resultIndex;
+
+  var transcript = event.results[current][0].transcript;
+ 
+    Content2 += transcript;
+    Textbox2.val(Content2);
+  
+};
+
+recognition3.onresult = function(event) {
+
+  var current = event.resultIndex;
+
+  var transcript = event.results[current][0].transcript;
+ 
+    Content3 += transcript;
+    Textbox3.val(Content3);
+  
+};
+
+recognition.onstart = function() { 
+  instructions.text('Voice recognition is ON.');
+}
+
+recognition.onspeechend = function() {
+  instructions.text('No activity.');
+}
+
+recognition.onerror = function(event) {
+  if(event.error == 'no-speech') {
+    instructions.text('Try again.');  
+  }
+}
+
+$('#start-btn').on('click', function(e) {
+  if (Content.length) {
+    Content += ' ';
+  }
+  recognition.start();
+});
+
+Textbox.on('input', function() {
+  Content = $(this).val();
+})
+
+recognition1.onstart = function() { 
+  instructions1.text('Voice recognition is ON.');
+}
+
+recognition1.onspeechend = function() {
+  instructions1.text('No activity.');
+}
+
+recognition1.onerror = function(event) {
+  if(event.error == 'no-speech') {
+    instructions1.text('Try again.');  
+  }
+}
+
+$('#start-btn1').on('click', function(e) {
+  if (Content1.length) {
+    Content1 += ' ';
+  }
+  recognition1.start();
+});
+
+Textbox1.on('input', function() {
+  Content1 = $(this).val();
+})
+
+
+recognition2.onstart = function() { 
+  instructions2.text('Voice recognition is ON.');
+}
+
+recognition2.onspeechend = function() {
+  instructions2.text('No activity.');
+}
+
+recognition2.onerror = function(event) {
+  if(event.error == 'no-speech') {
+    instructions2.text('Try again.');  
+  }
+}
+
+$('#start-btn2').on('click', function(e) {
+  if (Content2.length) {
+    Content2 += ' ';
+  }
+  recognition2.start();
+});
+
+Textbox2.on('input', function() {
+  Content2 = $(this).val();
+})
+
+
+
+
+recognition3.onstart = function() { 
+  instructions3.text('Voice recognition is ON.');
+}
+
+recognition3.onspeechend = function() {
+  instructions3.text('No activity.');
+}
+
+recognition3.onerror = function(event) {
+  if(event.error == 'no-speech') {
+    instructions3.text('Try again.');  
+  }
+}
+
+$('#start-btn3').on('click', function(e) {
+  if (Content3.length) {
+    Content3 += ' ';
+  }
+  recognition3.start();
+});
+
+Textbox3.on('input', function() {
+  Content3 = $(this).val();
+})
+
+
 </script>
   <section id="footer" style="background-color: #77b122">
     <div class="container">
